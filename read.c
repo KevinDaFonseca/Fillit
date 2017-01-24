@@ -6,7 +6,7 @@
 /*   By: kda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 12:51:27 by kda-fons          #+#    #+#             */
-/*   Updated: 2017/01/24 17:23:08 by kda-fons         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:33:21 by kda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		check_blocks(char *str)
 	int	blocks;
 
 	i = 0;
-	contact = 0;
+	blocks = 0;
 	while (i < 20)
 	{
 		if (str[i] == '#')

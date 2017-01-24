@@ -6,7 +6,7 @@
 /*   By: kda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 12:51:27 by kda-fons          #+#    #+#             */
-/*   Updated: 2017/01/24 15:46:45 by kda-fons         ###   ########.fr       */
+/*   Updated: 2017/01/24 17:23:08 by kda-fons         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		check_blocks(char *str)
 			blocks++;
 		i++;
 	}
-	return (blocks == 4)
+	return (blocks == 4);
 }
 
 int		check_tetri(char *str)
@@ -65,7 +65,7 @@ int	check_valid(char *str)
 	return (check_format(str) && check_blocks(str) && check_tetri(str));
 }
 
-t_tetri *read_tetri(int fd)
+int		read_tetri(int fd)
 {
 	char		*buffer;
 	char		carac;
@@ -77,11 +77,12 @@ t_tetri *read_tetri(int fd)
 	{
 		if (!check_valid(buffer))
 		{
-			ft_strdel(buffer);
-			return (free_tetri(tetri));
+			ft_strdel(&buffer);
+			free_tetri(tetri);
+			return (0);
 		}
 		add_tetri(create_tetri(buffer, carac));
 		carac++;
 	}
-	return  (tetri);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: kda-fons <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 12:51:27 by kda-fons          #+#    #+#             */
-/*   Updated: 2017/01/24 17:33:21 by kda-fons         ###   ########.fr       */
+/*   Updated: 2017/02/01 19:25:24 by tlernoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		check_format(char *str)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (i < 20)
@@ -29,8 +29,8 @@ int		check_format(char *str)
 
 int		check_blocks(char *str)
 {
-	int	i;
-	int	blocks;
+	int		i;
+	int		blocks;
 
 	i = 0;
 	blocks = 0;
@@ -60,16 +60,16 @@ int		check_tetri(char *str)
 	return (contact == 3 || contact == 4);
 }
 
-int	check_valid(char *str)
+int		check_valid(char *str)
 {
 	return (check_format(str) && check_blocks(str) && check_tetri(str));
 }
 
 int		read_tetri(int fd)
 {
-	char		*buffer;
-	char		carac;
-	t_tetri		*tetri;
+	char	*buffer;
+	char	carac;
+	t_tetri	*tetri;
 
 	buffer = ft_strnew(21);
 	carac = 'A';

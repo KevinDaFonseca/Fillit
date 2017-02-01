@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tetri.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlernoul <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/01 19:24:03 by tlernoul          #+#    #+#             */
+/*   Updated: 2017/02/01 19:24:05 by tlernoul         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 t_tetri	*create_tetri(char *str, char carac)
@@ -42,7 +54,7 @@ void	add_tetri(t_tetri **tetri, t_tetri *new)
 void	free_tetri(t_tetri **tetri)
 {
 	t_tetri *tmp;
-	tmp = tetri->right;
+	tmp = (*tetri)->right;
 	free(tetri);
-	free_tetri(tmp);
+	free_tetri(&tmp);
 }

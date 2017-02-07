@@ -21,7 +21,7 @@
 typedef	struct		s_tetri
 {
 	unsigned int	coord[4][2];
-	char			value;
+	char		value;
 	struct s_tetri	*right;
 	struct s_tetri	*left;
 }					t_tetri;
@@ -29,7 +29,7 @@ typedef	struct		s_tetri
 typedef	struct		s_map
 {
 	size_t			size;
-	char			*array;
+	char			**array;
 }					t_map;
 
 #endif
